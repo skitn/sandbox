@@ -7,15 +7,6 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-var data = `
-members:
-  - TOSHI
-  - HIDE
-  - PATA
-  - HEATH
-  - YOSHIKI
-`
-
 type Member struct {
 	Members []string
 }
