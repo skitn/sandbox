@@ -7,17 +7,25 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-type Member struct {
+type Config struct {
 	Members []string
 }
 
 func main() {
 	buf, err := ioutil.ReadFile("trial_yaml.yml")
 	if err != nil {
-		panic(err)
+		fmt.Println(fmt.Errorf("error: %s", err))
+		return
 	}
 
-	var member Member
-	err = yaml.Unmarshal(buf, &member)
-	fmt.Println(member)
+	var config Config
+	err = yaml.Unmarshal(buf, &config)
+	if err != nil {
+		fmt.Println(fmt.Errorf("error: %s", err))
+		return
+	}
+
+	for i := 0; i < len(config.Members); i++ {
+		fmt.Println(config.Members[i])
+	}
 }
