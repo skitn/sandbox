@@ -41,6 +41,9 @@ func main() {
 	fmt.Println(holidays)
 
 	// Check customize holiday
-	datetime2, err := time.Parse("2006-01-02", "2017-11-17")
-	fmt.Println(goholiday.IsNationalHoliday(datetime2))
+	datetime2, err := time.Parse("2006-01-02", "2017-11-16")
+	fmt.Println(goholiday.IsHoliday(datetime2))
+
+	datetime3, err := time.Parse("2006-01-02", "2017-11-17")
+	fmt.Println(goholiday.IsHoliday(datetime3))
 }
